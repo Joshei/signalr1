@@ -56,15 +56,15 @@ namespace SignalRChat
             A_client.Name = name1;
             ClientList.Add(A_client);
 
-            //if (integer == 0)
-            //{
-            //    integer = integer + 1;
-            //}
-            //else if (integer == 1)
-            //{
-            //    //Clients.Client(ClientList[1].ConnectionId).setinteger();
-            //    //Clients.Client(ClientList[0].ConnectionId).setinteger();
-            //}
+            if (integer == 0)
+            {
+                integer = integer + 1;
+            }
+            else if (integer == 1)
+            {
+                Clients.Client(ClientList[1].ConnectionId).setinteger();
+                Clients.Client(ClientList[0].ConnectionId).setinteger();
+            }
         }
         //passes in message is which click button 
         //public void play(string name, string message)
