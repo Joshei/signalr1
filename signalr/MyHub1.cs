@@ -26,7 +26,7 @@ namespace SignalRChat
         {
             string name = "";
             if (whoseturn == 0)
-            {
+            { 
                 name = "Player one ";
                 Clients.Client(ClientList[0].ConnectionId).printname(name);
                 name = "Player two ";
