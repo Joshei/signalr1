@@ -22,23 +22,27 @@ namespace SignalRChat
         {
             return base.OnConnected();
         }
-        public void printthename()
+        public async void printthename()
         {
             string name = "";
             if (whoseturn == 0)
-            { 
+            {
+                
+
                 name = "Player one ";
-                Clients.Client(ClientList[0].ConnectionId).printname(name);
+                await Clients.Client(ClientList[0].ConnectionId).printname(name);
                 name = "Player two ";
-                Clients.Client(ClientList[1].ConnectionId).printname2(name);
+                await Clients.Client(ClientList[1].ConnectionId).printname2(name);
             }
             //second player
             if (whoseturn == 1)
             {
+                
+
                 name = "Player two ";
-                Clients.Client(ClientList[0].ConnectionId).printname(name);
+                await Clients.Client(ClientList[0].ConnectionId).printname(name);
                 name = "Player one ";
-                Clients.Client(ClientList[1].ConnectionId).printname2(name);
+                await Clients.Client(ClientList[1].ConnectionId).printname2(name);
             }
             if (whoseturn == 0)
             {
@@ -50,7 +54,7 @@ namespace SignalRChat
             }
 
         }
-        public void  register(string name1)
+        public async void register(string name1)
         {
             A_client.ConnectionId = Context.ConnectionId;
             A_client.Name = name1;
@@ -58,12 +62,13 @@ namespace SignalRChat
 
             if (integer == 0)
             {
+                
                 integer = integer + 1;
             }
             else if (integer == 1)
             {
-                Clients.Client(ClientList[1].ConnectionId).setinteger();
-                Clients.Client(ClientList[0].ConnectionId).setinteger();
+               await Clients.Client(ClientList[1].ConnectionId).setinteger();
+               await Clients.Client(ClientList[0].ConnectionId).setinteger();
             }
         }
         //passes in message is which click button 
