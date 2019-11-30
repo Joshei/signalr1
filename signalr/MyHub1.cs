@@ -22,7 +22,7 @@ namespace SignalRChat
         {
             return base.OnConnected();
         }
-        public async void printthename()
+        public  void printthename()
         {
             string name = "";
             if (whoseturn == 0)
@@ -30,9 +30,9 @@ namespace SignalRChat
                 
 
                 name = "Player one ";
-                await Clients.Client(ClientList[0].ConnectionId).printname(name);
+                Clients.Client(ClientList[0].ConnectionId).printname(name);
                 name = "Player two ";
-                await Clients.Client(ClientList[1].ConnectionId).printname2(name);
+                Clients.Client(ClientList[1].ConnectionId).printname2(name);
             }
             //second player
             if (whoseturn == 1)
@@ -40,9 +40,9 @@ namespace SignalRChat
                 
 
                 name = "Player two ";
-                await Clients.Client(ClientList[0].ConnectionId).printname(name);
+                Clients.Client(ClientList[0].ConnectionId).printname(name);
                 name = "Player one ";
-                await Clients.Client(ClientList[1].ConnectionId).printname2(name);
+                Clients.Client(ClientList[1].ConnectionId).printname2(name);
             }
             if (whoseturn == 0)
             {
@@ -54,7 +54,7 @@ namespace SignalRChat
             }
 
         }
-        public async void register(string name1)
+        public void register(string name1)
         {
             A_client.ConnectionId = Context.ConnectionId;
             A_client.Name = name1;
@@ -67,8 +67,8 @@ namespace SignalRChat
             }
             else if (integer == 1)
             {
-               await Clients.Client(ClientList[1].ConnectionId).setinteger();
-               await Clients.Client(ClientList[0].ConnectionId).setinteger();
+               Clients.Client(ClientList[1].ConnectionId).setinteger();
+               Clients.Client(ClientList[0].ConnectionId).setinteger();
             }
         }
         //passes in message is which click button 
