@@ -16,7 +16,7 @@ namespace SignalRChat
         //https://www.codeproject.com/Questions/233650/How-to-define-Global-veriable-in-Csharp-net
         private static int whoseturn = 0;
         private static int integer = 0;
-        //private clients A_client = new clients();
+        private clients A_client = new clients();
         private static readonly List<clients> ClientList = new List<clients>();
         public override Task OnConnected()
         {
@@ -56,14 +56,9 @@ namespace SignalRChat
         }
         public void register(string name1)
         {
-            //A_Client = new clients { };
-            //A_client.ConnectionId = Context.ConnectionId;
-          //  clients A_Client = new clients();
-
-          //  A_Client.ConnectionId = Context.ConnectionId;
-          //  A_Client.Name = name1;
-            //A_client.Name = name1;
-          //  ClientList.Add(A_Client);
+            A_client.ConnectionId = Context.ConnectionId;
+            A_client.Name = name1;
+            ClientList.Add(A_client);
 
             if (integer == 0)
             {
@@ -76,7 +71,37 @@ namespace SignalRChat
                Clients.Client(ClientList[0].ConnectionId).setinteger();
             }
         }
-        
+        //passes in message is which click button 
+        //public void play(string name, string message)
+        //{
+        //    if (name == ClientList[whoseturn].Name)
+        //    {
+        //        if (message == "1")
+        //        {
+        //            Clients.Client(ClientList[0].ConnectionId).pressbutton(message);
+        //            Clients.Client(ClientList[1].ConnectionId).pressbutton(message);
+        //        }
+        //        if (message == "2")
+        //        {
+        //            Clients.Client(ClientList[0].ConnectionId).pressbutton(message);
+        //            Clients.Client(ClientList[1].ConnectionId).pressbutton(message);
+        //        }
+        //        printthename();
+        //    }
+        //}
+
+        //public void initial(string name)
+        //{
+        //    var a = 1;
+        //if (name == ClientList[0].Name)
+        //{
+        //    //get rid of whoseturn
+        //    Clients.Client(ClientList[0].ConnectionId).printname(name);
+        //    Clients.Client(ClientList[1].ConnectionId).printname(name);
+        //    //return (name);
+        //}
+
+        //}
     }
 
 }

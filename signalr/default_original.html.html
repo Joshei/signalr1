@@ -24,14 +24,14 @@
         var ainteger = "0";
         var buttons = ['1', '1', '1', '1', '1', '1'];
         var index = 0;
-        var chat = $.connection.ChatHub;
+        var chat = $.connection.chatHub;
 
             $("#Join").click(function () {
 
             //restore this when working to prevent second click on same register button
             $('#Join').hide();
             $('#Name').hide();
-            chat.server.register($('#Name').val());
+            chat.server.register($("#Name").val());
             if (ainteger == "1") {
                
                 chat.server.printthename();
@@ -93,7 +93,7 @@
         //    chat.server.send("nomessage", "6");
         //});
 
-        $.connection.hub.start().done;
+        $.connection.hub.start().done();
     });
 </script>
 
