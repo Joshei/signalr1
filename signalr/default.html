@@ -27,22 +27,19 @@
         var chat = $.connection.chatHub;
 
             $("#Join").click(function () {
-
-            //restore this when working to prevent second click on same register button
             $('#Join').hide();
             $('#Name').hide();
 
             //real code beneath
             //chat.server.register($('#Name').val());
 
-            //goes into 
             chat.server.register("a");
             //first goes here than goes into register right above?!?!?
             if (ainteger == "1") {
                
                 chat.server.printthename();
             }
-            //ainteger = "1";
+            
         });
 
             

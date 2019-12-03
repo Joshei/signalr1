@@ -56,14 +56,11 @@ namespace SignalRChat
         }
         public void register(string name1)
         {
-            //A_Client = new clients { };
-            //A_client.ConnectionId = Context.ConnectionId;
             
             clients A_Client = new clients();
 
             A_Client.ConnectionId = Context.ConnectionId;
             A_Client.Name = name1;
-            //A_client.Name = name1;
             ClientList.Add(A_Client);
 
             if (integer == 0)
@@ -73,8 +70,8 @@ namespace SignalRChat
             }
             else if (integer == 1)
             {
-               //Clients.Client(ClientList[1].ConnectionId).setinteger();
-               //Clients.Client(ClientList[0].ConnectionId).setinteger();
+               Clients.Client(ClientList[1].ConnectionId).setinteger();
+               Clients.Client(ClientList[0].ConnectionId).setinteger();
             }
             
         }
