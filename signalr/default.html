@@ -35,10 +35,10 @@
 
             chat.server.register("a");
             //first goes here than goes into register right above?!?!?
-            if (ainteger == "1") {
-               
-                chat.server.printthename();
-            }
+            //if (ainteger == "1") {
+            //   
+            //    chat.server.printthename();
+            //}
             
         });
 
@@ -46,6 +46,7 @@
         chat.client.setinteger =   function () {
         
             ainteger = "1";
+            chat.server.printthename();
         };
 
         //chat.client.printinitial = function (name, which) {
@@ -73,12 +74,12 @@
         //$('#button1').click(function () {
         //    chat.server.play($('#Name').val(), "1");
         //});
-        //chat.client.printname = function (message) {
-        //    $("#turn").html(message + ", its your turn!");
-        //};
-        //chat.client.printname2 =  function (message) {
-        //    $("#turn").html(message + ", its not your turn!");
-        //};
+        chat.client.printname = function (message) {
+            $("#turn").html(message + ", its your turn!");
+        };
+        chat.client.printname2 =  function (message) {
+            $("#turn").html(message + ", its not your turn!");
+          };
         //$('#button2').click(function () {
         //    chat.server.play($('#Name').val(), "2");
         //});
